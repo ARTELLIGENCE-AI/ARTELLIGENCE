@@ -20,6 +20,7 @@ var rendercanvasid = 0;
 var ctx2;
 
 function change_music(uri,id) {
+    document.getElementById("footer_pad").style.paddingBottom = "70px";
     document.getElementById("cs_audioplayer").style.visibility = "visible";
     if (ctx2) {
         var canvas = document.getElementById(rendercanvasid);
