@@ -11482,7 +11482,7 @@ header.masthead .masthead-heading {
   background: rgba(0, 0, 0, 0.55);
   align-items: center;
   justify-content: center;
-  opacity: 0;
+  opacity: 0.5;
   transition: opacity ease-in-out 0.25s;
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
