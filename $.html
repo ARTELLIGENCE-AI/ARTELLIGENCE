@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+   
+    <title>{{ title }}</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@100&family=Orbitron&display=swap" rel="stylesheet">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/cspd-player.css">
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand"
+                href="#page-top">{{ brand }}<!-- <img src="assets/img/navbar-logo.svg" alt="..." /> --></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#services">{{ service.title }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">{{ music.title }}</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead" style="background-image:url({{ cover }})">
+        <div class="container">
+            <br />
+            <br />
+            <div class="masthead-subheading">{{ sloganSmall }}</div>
+            <div class="masthead-heading text-uppercase">{{ sloganBig }}</div>
+            <a class="btn btn-outline-light btn-xl text-uppercase" href="#services">{{ btnMore }}</a>
+        </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services"
+        style="background: rgb(255,237,188);
+        background: radial-gradient(circle, rgba(255,237,188,1) 0%, rgba(255,201,139,1) 80%, rgba(255,134,87,1) 100%);">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Services</h2>
+                <h3 class="section-subheading text-muted">Some of our service offerings</h3>
+            </div>
+            <div class="row text-center">
+{% for i in range(0, service.offerings.length) -%}                
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fa-solid {{ service.offerings[i].fa }} fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">{{ service.offerings[i].title }}</h4>
+                    <p class="text-muted">{{ service.offerings[i].description }}</p>
+                </div>
+{%- endfor %}                
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid-->
+    <section class="page-section bg-dark" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase text-muted" style="
+                   background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+                    ">{{ music.title }}</h2>
+                <h3 class="section-subheading text-muted">{{ music.description }}</h3>
+            </div>
+            <div class="row">
+{% for i in range(0, music.tracks.length) -%}
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" onclick="change_music('{{music.tracks[i].url}}','{{i}}')">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="far fa-play-circle fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{{music.tracks[i].cover}}" alt="..." />
+                            <canvas class="coveringCanvas" id="{{ i }}"></canvas>
+                        </a>
+                        <a  href="#portfolioModal{{ i+1 }}" style="text-decoration: none" data-bs-toggle="modal">
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading text-dark" >{{music.tracks[i].title}}</div>
+                            <div class="portfolio-caption-subheading text-muted" style="text-decoration: none;">{{music.tracks[i].genre}}</div>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+{%- endfor %}                
+            </div>
+        </div>
+    </section>
+    <!-- About-->
+    <!-- Team-->
+    <!-- Clients-->
+    <!-- Contact-->
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container" id="footer_pad">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">{{ copyright }}</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    {% if social.twitter|length %}
+                    <a class="btn btn-social mx-2" href="{{ social.twitter }}" style="color:white; background-color: #00acee" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    {% endif %}
+                    {% if social.facebook|length %}
+                    <a class="btn btn-dark btn-social mx-2" href="{{ social.facebook }}" style="color:white; background-color: #3b5998" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    {% endif %}
+                    {% if social.soundcloud|length %}
+                    <a class="btn btn-social mx-2" href="{{ social.soundcloud }}" style="color:white; background-color: #ff7700" aria-label="Soundcloud"><i
+                            class="fab fa-soundcloud"></i></a>
+                    {% endif %}
+                    {% if social.bandcamp|length %}
+                            <a class="btn btn-social mx-2" href="{{ social.bandcamp }}" style="color:white; background-color: #629aa9" aria-label="Bancamp"><i
+                            class="fab fa-bandcamp"></i></a>
+                    {% endif %}
+                </div>
+                <!-- <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio item 1 modal popup-->
+    {% for i in range(0, music.tracks.length) -%}
+    <div class="portfolio-modal modal fade" id="portfolioModal{{i +1}}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">{{ music.tracks[i].title }}</h2>
+                                <p class="item-intro text-muted">{{ music.tracks[i].genre }}</p>
+                                <img class="img-fluid d-block mx-auto" src="{{ music.tracks[i].cover }}" alt="..." />
+                                <p>{{ music.tracks[i].about }}</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Music
+                                    </li>
+                                </ul>
+                                <button class="btn btn-dark btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%- endfor %}  
+    <audio id="audio">
+        <source src="" type="audio/mpeg">
+    </audio>
+
+
+    <div id="cs_audioplayer" style="visibility:hidden">
+
+        <span style="position: relative;left: 0;float: left;font-size: 0.87em;"><span
+                id="cs_audio_current_time">0:0</span></span>
+
+        <span id="cs_play_pause_btn" style="position: relative;">
+
+            <div id="cs_audio_pause">
+                <i class="far fa-pause-circle" style="z-index:9999"></i>
+            </div>
+            <div id="cs_audio_play">
+                <i class="far fa-play-circle" style="z-index:9999"></i>
+            </div>
+        </span>
+
+        <span id="cs_audio_sound" style="position: relative;right: 5px;float: right;margin-left: 15px;top: -2px;">
+            <i style="vertical-align: middle;font-size: 1.14em;" class="fas fa-volume-down"></i>
+            <div class="cs_volBar"
+                style="height: 6px; width: 65px;background-color: #ccc;display: inline-block;cursor: pointer;">
+                <div class="cs_volume" style="height: 6px;width: 28px;background-color: red;position: absolute;"></div>
+            </div>
+
+        </span>
+        <span id="cs_audio_duration"
+            style="position: relative;right: 0;float: right;padding-left: 10px;font-size: 0.87em;"></span>
+
+        <div class="cs_audio_bar">
+            <div class="cs_audio_bar_now"></div>
+            <div class="cs_audio_bar_loaded"></div>
+        </div>
+
+    </div>
+
+    <script src="js/cspd-player.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ gtag }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ gtag }}');
+</script>
+<script>
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+{
+    "title": "ARTELLIGENCE - An AI Avatar Musician Project",
+    "brand": "ARTELLIGENCE",    
+    "sloganSmall": "Welcome To my Artist Page!",
+    "sloganBig": "IT'S NICE TO MEET YOU",
+    "btnMore": "Tell me More",
+    "cover": "../assets/img/header-bg.png",
+    "gtag": "G-NCGM454EXC",
+    "copyright": "Copyright © ARTELLIGENCE 2023",
+    "social": {
+        "twitter" : "https://twitter.com/ART3LLIGENC3",
+        "soundcloud" : "https://soundcloud.com/artelligence-music",
+        "bandcamp" : "https://artelligence.bandcamp.com/",
+        "facebook" : "https://www.facebook.com/artelligencemusic"
+    },
+    "service": {
+        "title": "Services",
+        "description": "Some of our service offerings.",
+        "offerings": [
+            {
+                "title": "Composing",
+                "description": "Composition and production of original music in the cinematic and electronic genre. Tailored music for film, TV, commercials, video games, and other media projects. High-quality sound design and soundscapes to complement the music. Mixing and mastering to ensure the final product sounds polished and professional.",
+                "fa": "fa-music"
+            },
+            {
+                "title": "Vocals",
+                "description": "Writing and recording of ARTELLIGENCE AI vocals in various genres, including pop, rock and electronic music. Vocal arrangement, harmonization and layering to create the perfect sound. Editing and processing of vocals to ensure a polished and professional final product. Mixing and mastering to ensure that vocals blend seamlessly with the rest of the music.",
+                "fa": "fa-microphone"
+            },
+            {
+                "title": "Mastering",
+                "description": "Professional digital audio mastering for various genres, including pop, rock, electronic and more. Optimization of audio levels, EQ and dynamics to ensure your music sounds balanced and cohesive. Enhancement of stereo width, depth and clarity to create a more immersive listening experience. Loudness maximization to ensure your music meets the loudness standards for streaming services and radio play. High-quality audio formats for digital distribution and physical media.",
+                "fa": "fa-sliders"
+            }
+        ]
+    },
+    "music" : {
+        "title": "Music",
+        "description": "Some of our work, click on title for track details. Click on play button to select and play track.",
+        "tracks": [
+            {
+                "title" : "Outcast",
+                "genre" : "Cinematic Composition",
+                "cover" : "assets/img/portfolio/1.png",
+                "url" : "assets/ARTELLIGENCE - Outcast.mp3",
+                "about" : "Being an outcast can be a challenging and isolating experience. An outcast is someone who is marginalized or excluded from a group, whether it be due to their appearance, beliefs, interests, or behavior. It can happen in any context, such as school, work, or social groups. Outcasts may feel like they don't fit in or belong anywhere, and this can lead to feelings of loneliness, depression, and anxiety. They may be subject to bullying, ridicule, or discrimination, which can further compound their feelings of isolation. However, being an outcast can also be a source of strength and resilience. It can allow individuals to develop their own unique identities and perspectives. Outcasts may find solace in creative pursuits or in building connections with other like-minded individuals who share their interests or experiences. Ultimately, it's important to remember that everyone has the right to be themselves and should not have to conform to societal norms or expectations. While being an outcast can be difficult, it's important to embrace your individuality and seek out supportive communities where you feel accepted and valued."
+            },
+            {
+                "title" : "The Day The World Ended",
+                "genre" : "Dark Wave",
+                "cover" : "assets/img/portfolio/6.png",
+                "url" : "assets/ARTELLIGENCE - The Day The World Ended.mp3",
+                "about": "“The Day the World Ended” is a song that explores themes of loss, despair, and the aftermath of a catastrophic event. The lyrics convey a sense of hopelessness and resignation as the narrator recounts the moment when everything fell apart and how they struggle to cope with the aftermath. The imagery used in the lyrics is vivid and powerful, painting a bleak picture of a world in ruins. Musically, the song features a slow, melancholic melody that reinforces the sad and somber mood of the lyrics. The use of minor chords and a slow tempo create a sense of heaviness and sorrow, which is further emphasized by the mournful vocals. Overall, “The Day the World Ended” is a powerful song that effectively conveys a sense of loss and despair. Its lyrics and musical elements work together to create a haunting and emotionally charged experience for the listener."
+            },
+            {
+                "title" : "Independence",
+                "genre" : "Electronic Dance Music",
+                "cover" : "assets/img/portfolio/3.png",
+                "url" : "assets/ARTELLIGENCE - Independence.mp3",
+                "about": "Independence is a fundamental human desire that has been sought after for centuries. It refers to the ability of an individual or a group to make decisions and take actions without being influenced or controlled by external forces. It is an essential aspect of human autonomy and is considered to be a fundamental human right. Independence can manifest itself in various forms, ranging from personal independence to political independence. Personal independence refers to the ability of an individual to make decisions and take actions that are consistent with their own values, beliefs, and goals, without being influenced or controlled by others. This can include financial independence, emotional independence, and intellectual independence, among others. Political independence, on the other hand, refers to the ability of a nation or a group to govern itself and make decisions without external interference or control. This form of independence is often associated with the struggle for self-determination, as nations seek to break free from colonial or imperial domination. The pursuit of independence can be challenging and requires courage, determination, and resilience. It often involves overcoming obstacles and facing opposition from those who seek to maintain control or influence. However, the benefits of independence are significant, as it enables individuals and nations to exercise their rights and freedoms, pursue their own interests, and chart their own course. Independence is not only a personal or political ideal but is also a necessary condition for human flourishing. It enables individuals and nations to express their creativity, pursue their dreams, and contribute to society in meaningful ways. Without independence, people can become vulnerable to exploitation, manipulation, and oppression, which can undermine their well-being and limit their potential. In conclusion, independence is a fundamental human value that is essential for personal and collective well-being. It enables individuals and nations to exercise their rights and freedoms, pursue their own interests, and contribute to society in meaningful ways. While the pursuit of independence can be challenging, the benefits of achieving it are significant and can lead to greater prosperity, happiness, and fulfillment."
+            }
+        ]
+    }
+}
